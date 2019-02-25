@@ -3,3 +3,8 @@ body{
     background-position:center;
     background-size:cover;
 }
+
+.main-container{
+    position: relative;
+    top:10px;
+}

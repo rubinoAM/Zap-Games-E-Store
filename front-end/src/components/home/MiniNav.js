@@ -1,8 +1,20 @@
 import React from 'react';
 
 function MiniNav(props){
+    const categories = [
+        'Nintendo', 'Sega', 'PlayStation', 'Atari',
+    ]
+
     return(
-        <h1>PRESS A TO PUNCH!</h1>
+        <nav>
+            <div className="nav-wrapper deep-purple darken-4">
+            <ul className="left hide-on-med-and-down">
+                <li><a>Sass</a></li>
+                <li><a>Components</a></li>
+                <li className="active"><a>JavaScript</a></li>
+            </ul>
+            </div>
+        </nav>
     )
 }
 

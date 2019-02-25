@@ -1,8 +1,16 @@
 import React from 'react';
+import GameCard from '../utilities/GameCard';
 
 function Content(props){
     return(
-        <h1>PRESS B TO JUMP!</h1>
+        <div className="row">
+            <div className="col s12">
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+            </div>
+        </div>
     )
 }
 

@@ -15,16 +15,20 @@ function Carousel(props){
 
     return(
         <Slider {...settings}>
-            <div>
+            <div className="slick-image">
+                <img className="carousel-img" src="/images/home1.jpg" />
                 <h3>PRESS UP TO LOOK UP!</h3>
             </div>
-            <div>
+            <div className="slick-image">
+                <img className="carousel-img" src="/images/home2.jpg" />
                 <h3>PRESS LEFT TO MOVE LEFT!</h3>
             </div>
-            <div>
+            <div className="slick-image">
+                <img className="carousel-img" src="/images/home3.jpg" />
                 <h3>PRESS RIGHT TO MOVE RIGHT!</h3>
             </div>
-            <div>
+            <div className="slick-image">
+                <img className="carousel-img" src="/images/home4.jpg" />
                 <h3>PRESS DOWN TO DUCK!</h3>
             </div>
         </Slider>

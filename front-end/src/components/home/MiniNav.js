@@ -5,13 +5,17 @@ function MiniNav(props){
         'Nintendo', 'Sega', 'PlayStation', 'Atari',
     ]
 
+    const sections = categories.map((cat)=>{
+        return(
+            <li><a>{cat}</a></li>
+        )
+    });
+
     return(
         <nav>
             <div className="nav-wrapper indigo darken-4">
             <ul className="left hide-on-small-only">
-                <li><a>Sass</a></li>
-                <li><a>Components</a></li>
-                <li><a>JavaScript</a></li>
+                {sections}
             </ul>
             </div>
         </nav>

@@ -3,7 +3,7 @@ import GameCard from '../utilities/GameCard';
 
 function Content(props){
     return(
-        <div className="row">
+        <div className="row content-container">
             <div className="col s12">
                 <GameCard />
                 <GameCard />

@@ -17,3 +17,11 @@
 .slick-next{
     right:25px;
 }
+
+
+
+@media screen and (max-width:992px){
+    .carousel-img{
+        height:300px;
+    }
+}

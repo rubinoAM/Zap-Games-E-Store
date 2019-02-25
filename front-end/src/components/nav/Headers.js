@@ -9,9 +9,7 @@ return (
     <div class="header">
         <div className="container-fluid center black">
             <div className="row">
-                <div className="container">
-                    <LoginNavBar />
-                </div>
+                <LoginNavBar />
             </div>
         </div>
         <div className="container">

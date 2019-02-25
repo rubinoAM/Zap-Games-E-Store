@@ -18,7 +18,7 @@ function LoginNavBar(props){
     return(
         <div className="login-nav-bar">
             <div className="left valign-wrapper brand-logo">ZAP GAMES</div>
-            <div className="right">
+            <div className="right hide-on-small-only">
                 <button type="submit" class="btn play-button btn-github">Login with github</button>
                 <span>MY CART 0 ITEM - $0.00</span>
             </div>

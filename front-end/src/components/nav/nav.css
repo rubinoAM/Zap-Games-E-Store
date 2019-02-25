@@ -9,6 +9,7 @@
 .brand-logo{
     font-family:'ZCOOL QingKe HuangYou',cursive;
     font-size:2.5rem;
+    margin-left:0.75rem;
 }
 
 .login-nav-bar .right{
@@ -43,6 +44,10 @@
 
 .search-input{
     width:95%;
+}
+
+.search-input input{
+    font-family:'Poppins',sans-serif;
 }
 
 @media screen and (max-width:600px){

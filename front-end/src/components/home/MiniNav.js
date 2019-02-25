@@ -7,7 +7,7 @@ function MiniNav(props){
 
     return(
         <nav>
-            <div className="nav-wrapper deep-purple darken-4">
+            <div className="nav-wrapper indigo darken-4">
             <ul className="left hide-on-med-and-down">
                 <li><a>Sass</a></li>
                 <li><a>Components</a></li>

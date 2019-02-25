@@ -2,9 +2,5 @@ body{
     background-image:url('/images/bg.png');
     background-position:center;
     background-size:cover;
-}
-
-.main-container{
-    position: relative;
-    top:10px;
+    font-family:'Poppins',sans-serif;
 }

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import Home from './components/home/Home';
-import NavBar from './components/NavBar';
+import Headers from './components/nav/Headers';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <Headers />
         <div className="container center main-container">
           <Home />
         </div>
+        <Footer />
       </div>
     );
   }

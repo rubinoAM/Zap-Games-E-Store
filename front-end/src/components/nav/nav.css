@@ -14,3 +14,23 @@
     font-family:'ZCOOL QingKe HuangYou',cursive;
     font-size:2.5rem;
 }
+
+.login-nav-bar .right{
+    position:relative;
+    top:10px;
+}
+
+.header .login-nav-bar{
+    height: 30px;
+}
+.header .btn-github{
+    color: #fff;
+    background-color: #444;
+    border-color: rgba(0,0,0,0.2);
+    background-repeat: no-repeat;
+    background-position: 5px;
+    margin-right:5px;
+}
+.btn-github:hover{
+    color: #aaa;
+}

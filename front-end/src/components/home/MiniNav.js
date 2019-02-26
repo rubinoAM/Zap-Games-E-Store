@@ -13,7 +13,7 @@ function MiniNav(props){
 
     return(
         <nav>
-            <div className="nav-wrapper indigo darken-4">
+            <div className="nav-wrapper indigo darken-1">
             <ul className="left hide-on-small-only">
                 {sections}
             </ul>

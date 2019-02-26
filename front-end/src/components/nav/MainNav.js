@@ -4,7 +4,7 @@ function MainNav(props){
     return(
         <div className="main-nav">
             <nav>
-                <div className="nav-wrapper indigo darken-4">
+                <div className="nav-wrapper indigo darken-1">
                     <ul className="left hide-on-small-only">
                         <li><a href="sass.html">Home</a></li>
                         <li><a href="badges.html">Location</a></li>

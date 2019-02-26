@@ -6,7 +6,7 @@ class Footer extends Component{
       const curYear = curTime.getFullYear();
 
       return(
-          <footer class="page-footer indigo darken-4">
+          <footer class="page-footer black">
             <div class="container">
               <div class="row">
                 <div class="col l6 s12">

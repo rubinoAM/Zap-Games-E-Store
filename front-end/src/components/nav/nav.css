@@ -31,3 +31,19 @@
 .btn-github:hover{
     color: #aaa;
 }
+
+/* label focus color */
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+    color: #f3c74c;
+}
+
+/* label underline focus color */
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #f3c74c;
+    box-shadow: 0 1px 0 0 #f3c74c;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #f3c74c;
+}

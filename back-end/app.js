@@ -44,6 +44,14 @@ passport.use(new githubStrategy({
   return cb(null,profile);
 }));
 
+passport.serializeUser((user,cb)=>{
+  cb(null,user);
+});
+
+passport.deserializeUser((user,cb)=>{
+  cb(null,user);
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

@@ -3,11 +3,37 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const config = require('config');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+const helmet = require('helmet');
+app.use(helmet());
+
+//ALLOW CROSS ORIGIN
+app.use((req, res, next)=>{
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
+
+//PASSPORT FILES
+const passport = require('passport');
+const githubStrategy = require('passport-github').Strategy;
+
+passport.use(new githubStrategy({
+  clientID: config.passport.id,
+  clientSecret: config.passport.secret,
+  callbackURL: config.passport.callbackURL,
+}, (accessToken, refreshToken, profile, cb) => {
+  User.findOrCreate({ githubId: profile.id }, function (err, user) {
+    return cb(err, user);
+  });
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

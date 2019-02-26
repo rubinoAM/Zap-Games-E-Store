@@ -12,21 +12,20 @@ router.get('/auth/github', passport.authenticate('github'));
 router.get('/auth/github/callback', passport.authenticate('github'), (req,res,next)=>{
   const selectQuery = `SELECT * FROM users;`;
   const pgPromise = db.query(selectQuery);
+  let userName = req.user.username;
+  
   pgPromise.then((data)=>{
-    /* const insertQuery = `INSERT INTO users (username,token) VALUES (?,?);`
-
-    let userName = req.user.username;
-    let userToken;
+    const insertQuery = `INSERT INTO users (username) VALUES ($1);`;
+    const loginQuery = `SELECT * FROM users WHERE username = $1;`;
 
     if(data.length === 0){
-      db.query(insertQuery,[userName,userToken],(err,results)=>{
-        if(err){throw err}
-      })
+      db.query(insertQuery,[userName]);
     } else {
-
-    } */
-    res.json(data);
+      db.query(loginQuery,[userName]);
+    }
+    //res.json(data);
   })
+  //res.json(req.user);
 });
 
 module.exports = router;

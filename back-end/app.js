@@ -31,6 +31,8 @@ app.use(session({
 
 const passport = require('passport');
 const githubStrategy = require('passport-github').Strategy;
+const jwtStrategy = require('passport-jwt').Strategy;
+const extractJWT = require('passport-jwt').ExtractJwt;
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -43,6 +45,10 @@ passport.use(new githubStrategy({
   //console.log(profile);
   return cb(null,profile);
 }));
+
+// passport.use(new jwtStrategy({},(jwt_payload,done)=>{
+  
+// }));
 
 passport.serializeUser((user,cb)=>{
   cb(null,user);

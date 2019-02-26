@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 const config = require('./config');
 
 var indexRouter = require('./routes/index');
@@ -22,16 +23,25 @@ app.use((req, res, next)=>{
 });
 
 //PASSPORT FILES
+app.use(session({
+  secret: 'Gbenga is a cool guy.',
+  resave: false,
+  saveUninitialized: true,
+}));
+
 const passport = require('passport');
 const githubStrategy = require('passport-github').Strategy;
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 passport.use(new githubStrategy({
   clientID: config.passport.id,
   clientSecret: config.passport.secret,
   callbackURL: config.passport.callbackURL,
 }, (accessToken, refreshToken, profile, cb) => {
-  console.log("GET ME A HORSE");
-  console.log(profile);
+  //console.log(profile);
+  return cb(null,profile);
 }));
 
 // view engine setup

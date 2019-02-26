@@ -5,9 +5,9 @@ function MiniNav(props){
         'Nintendo', 'Sega', 'PlayStation', 'Atari',
     ]
 
-    const sections = categories.map((cat)=>{
+    const sections = categories.map((cat,i)=>{
         return(
-            <li><a>{cat}</a></li>
+            <li key={i}><a>{cat}</a></li>
         )
     });
 

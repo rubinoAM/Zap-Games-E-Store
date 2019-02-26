@@ -27,6 +27,7 @@
     background-repeat: no-repeat;
     background-position: 5px;
     margin-right:5px;
+    font-family:'Poppins',sans-serif;
 }
 .btn-github:hover{
     color: #aaa;

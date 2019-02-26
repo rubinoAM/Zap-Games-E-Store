@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import loginTab from '../../misc/openWindow';
 
-function LoginNavBar(props){
+class LoginNavBar extends Component{
     /*
         Process:
         1) User clicks and opens new window via loginTab
@@ -15,14 +16,24 @@ function LoginNavBar(props){
         8) Put it in localstorage so we can use it next time
     */
 
-    return(
-        <div className="login-nav-bar">
-            <div className="left valign-wrapper brand-logo">ZAP GAMES</div>
-            <div className="right hide-on-small-only">
-                <button type="submit" class="btn play-button btn-github">Login with github</button>
-                <span>MY CART 0 ITEM - $0.00</span>
+    constructor(){
+        super()
+    }
+
+    githubAuth = (e)=>{
+        loginTab('http://localhost:7000/auth/github');
+    }
+
+    render(){
+        return(
+            <div className="login-nav-bar">
+                <div className="left valign-wrapper brand-logo">ZAP GAMES</div>
+                <div className="right hide-on-small-only">
+                    <button type="button" onClick={this.githubAuth} className="btn play-button btn-github">Login with github</button>
+                    <span>MY CART 0 ITEM - $0.00</span>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 export default LoginNavBar;

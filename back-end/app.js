@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const config = require('config');
+const config = require('./config');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -30,9 +30,8 @@ passport.use(new githubStrategy({
   clientSecret: config.passport.secret,
   callbackURL: config.passport.callbackURL,
 }, (accessToken, refreshToken, profile, cb) => {
-  User.findOrCreate({ githubId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
+  console.log("GET ME A HORSE");
+  console.log(profile);
 }));
 
 // view engine setup

@@ -4,8 +4,7 @@
 
 export default (state = [],action)=>{
     //Signature (arguments) takes state; we default it to []
-    if(action.type === 'AUTH_ACTION'){
-        //Update
+    if(action.type === 'AUTH_ACTION' || action.type === 'LOGIN_ACTION'){
         return action.payload.data;
     } else if(action.type === 'LOGOUT'){
         return [];

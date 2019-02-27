@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export default (formData)=>{
-    console.log("AUTH_ACTION RUNNING");
+    //console.log("AUTH_ACTION RUNNING");
     //console.log(formData);
     const axiosPromise = axios({
         url: `${window.apiHost}/register`,

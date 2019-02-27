@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import loginTab from '../../misc/openWindow';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class LoginNavBar extends Component{
     /*
@@ -26,13 +27,25 @@ class LoginNavBar extends Component{
     }
 
     render(){
+        let rightNavBar;
+        if(this.props.auth.username !== undefined){
+            rightNavBar = <span>
+                <span>Welcome, {this.props.auth.username}!</span>
+                <Link className="main-link" to="/">Log Out</Link>
+            </span>
+        }else{
+            rightNavBar = <span>
+                <Link className="main-link" to="/login">Log In</Link>
+                <Link className="main-link" to="/register">Register</Link>
+                <button type="button" onClick={this.githubAuth} className="btn btn-github">Login with github</button>    
+            </span>
+        }
+
         return(
             <div className="login-nav-bar">
                 <Link className="left valign-wrapper brand-logo" to="/">ZAP GAMES</Link>
                 <div className="right hide-on-small-only">
-                    <Link className="main-link" to="/login">Log In</Link>
-                    <Link className="main-link" to="/register">Register</Link>
-                    <button type="button" onClick={this.githubAuth} className="btn btn-github">Login with github</button>
+                    {rightNavBar}
                     <Link className="main-link" to="/cart">
                         <i className="material-icons">shopping_cart</i>
                     </Link>
@@ -41,4 +54,18 @@ class LoginNavBar extends Component{
         )
     }
 }
-export default LoginNavBar;
+
+function mapStateToProps(state){
+    return{
+        auth:state.auth,
+    }
+}
+
+/* function mapDispatchToProps(dispatcher){
+    return{
+
+    }
+} */
+
+export default connect(mapStateToProps)(LoginNavBar);
+//export default LoginNavBar;

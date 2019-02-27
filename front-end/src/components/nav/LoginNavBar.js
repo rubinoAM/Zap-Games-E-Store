@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import loginTab from '../../misc/openWindow';
+import { Link } from 'react-router-dom';
 
 class LoginNavBar extends Component{
     /*
@@ -27,9 +28,11 @@ class LoginNavBar extends Component{
     render(){
         return(
             <div className="login-nav-bar">
-                <div className="left valign-wrapper brand-logo">ZAP GAMES</div>
+                <Link className="left valign-wrapper brand-logo" to="/">ZAP GAMES</Link>
                 <div className="right hide-on-small-only">
-                    <button type="button" onClick={this.githubAuth} className="btn play-button btn-github">Login with github</button>
+                    <Link className="main-link" to="/login">Log In</Link>
+                    <Link className="main-link" to="/register">Register</Link>
+                    <button type="button" onClick={this.githubAuth} className="btn btn-github">Login with github</button>
                     <span>MY CART 0 ITEM - $0.00</span>
                 </div>
             </div>

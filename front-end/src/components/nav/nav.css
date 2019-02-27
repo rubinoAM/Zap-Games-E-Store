@@ -10,6 +10,7 @@
     font-family:'ZCOOL QingKe HuangYou',cursive;
     font-size:2.5rem;
     margin-left:0.75rem;
+    color:#fff;
 }
 
 .login-nav-bar .right{
@@ -47,4 +48,9 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 /* icon prefix focus color */
 .input-field .prefix.active {
     color: #f3c74c;
+}
+
+.main-link{
+    color:#fff;
+    margin:0 5px;
 }

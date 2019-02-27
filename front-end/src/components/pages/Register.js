@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './form.css';
+import { bindActionCreators } from 'redux';
+import authAction from '../../actions/authAction';
+import { connect } from 'react-redux';
 
 class Register extends Component{
     constructor(){
@@ -12,9 +15,9 @@ class Register extends Component{
 
     registerSubmit = (e)=>{
         e.preventDefault();
-        const username = e.target[0].value;
+        const email = e.target[0].value;
         const password = e.target[1].value;
-        //console.log(username,password);
+        this.props.authAction({ email,password });
     }
 
     render(){
@@ -58,4 +61,20 @@ class Register extends Component{
     }
 }
 
-export default Register;
+function mapStateToProps(state){
+    //state: rootReducer/store
+    return {
+        //Key: this.props.key will be accessible to this component
+        //Value: property of rootReducer
+        auth:state.auth,
+    }
+}
+
+function mapDispatchToProps(dispatcher){
+    //dispatch:sends the action to all reducers
+    return bindActionCreators({
+        authAction: authAction,
+    },dispatcher)
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Register);

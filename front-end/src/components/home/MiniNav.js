@@ -2,7 +2,7 @@ import React from 'react';
 
 function MiniNav(props){
     const categories = [
-        'Nintendo', 'Sega', 'PlayStation', 'Atari',
+        'Nintendo', 'Sega', 'PlayStation', 'Atari', 'Intellivision', 'PC',
     ]
 
     const sections = categories.map((cat,i)=>{
@@ -12,13 +12,21 @@ function MiniNav(props){
     });
 
     return(
-        <nav>
-            <div className="nav-wrapper indigo darken-1">
-            <ul className="left hide-on-small-only">
+        <div>
+            <nav>
+                <div className="nav-wrapper indigo darken-1">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger hide-on-med-and-up">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul className="left hide-on-small-only">
+                    {sections}
+                </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-demo">
                 {sections}
             </ul>
-            </div>
-        </nav>
+        </div>
     )
 }
 

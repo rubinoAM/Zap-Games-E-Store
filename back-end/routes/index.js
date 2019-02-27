@@ -28,14 +28,45 @@ router.get('/auth/github/callback', passport.authenticate('github'), (req,res,ne
   })
 });
 
-router.post('/register',(req,res,next)=>{
-  //Check if username exists
-    //If not, insert
-      //Create token
-    //If so, let React know
-  const checkUsernameQuery = `SELECT * FROM users WHERE username = $1`
-  db.query(checkUsernameQuery,[req.body.username]).then(results=>{
+//Log In
+router.post('/login',(req,res,next)=>{
+  const checkUsernameQuery = `SELECT * FROM users WHERE username = $1;`;
+  const username = req.body.username;
+  const password = req.body.password
+
+  db.query(checkUsernameQuery,[username]).then(results=>{
     console.log(results);
+    if(results.length === 0){
+      res.json({
+        msg:'userNotFound',
+      })
+    } else {
+      const checkHash = bcrypt.compareSync(password,results[0].password);
+      if(checkHash){
+        const token = randToken.uid(50);
+        const updateTokenQuery = `UPDATE users SET token = $1 WHERE username = $2;`;
+        db.query(updateTokenQuery,[token,username]).catch(error => {if(error){throw error}});
+        res.json({
+          msg:'loggedIn',
+          token:token,
+          username:username,
+        });
+      } else {
+        res.json({
+          msg:'badPassword',
+        })
+      }
+    }
+  }).catch((err)=>{
+    if(err){throw err}
+  })
+})
+
+//Register
+router.post('/register',(req,res,next)=>{
+  const checkUsernameQuery = `SELECT * FROM users WHERE username = $1;`;
+  db.query(checkUsernameQuery,[req.body.username]).then(results=>{
+    //console.log(results);
     if(results.length === 0){
       const insertUserQuery = `INSERT INTO users (username,password,token) VALUES ($1,$2,$3);`;
       const token = randToken.uid(50);
@@ -43,6 +74,8 @@ router.post('/register',(req,res,next)=>{
       db.query(insertUserQuery,[req.body.username,hash,token]).then(()=>{
         res.json({
           msg:"userAdded",
+          token:token,
+          username: req.body.username,
         })
       })
     } else {

@@ -33,7 +33,9 @@ class LoginNavBar extends Component{
                     <Link className="main-link" to="/login">Log In</Link>
                     <Link className="main-link" to="/register">Register</Link>
                     <button type="button" onClick={this.githubAuth} className="btn btn-github">Login with github</button>
-                    <span>MY CART 0 ITEM - $0.00</span>
+                    <Link className="main-link" to="/cart">
+                        <i className="material-icons">shopping_cart</i>
+                    </Link>
                 </div>
             </div>
         )

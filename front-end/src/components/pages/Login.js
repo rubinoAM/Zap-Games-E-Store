@@ -12,7 +12,8 @@ class Login extends Component{
 
     loginSubmit = (e)=>{
         e.preventDefault();
-        console.dir(e.target);
+        const username = e.target[0].value;
+        const password = e.target[1].value;
     }
 
     render(){

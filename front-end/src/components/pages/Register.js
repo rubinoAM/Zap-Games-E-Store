@@ -12,7 +12,9 @@ class Register extends Component{
 
     registerSubmit = (e)=>{
         e.preventDefault();
-        console.log(e.target);
+        const username = e.target[0].value;
+        const password = e.target[1].value;
+        //console.log(username,password);
     }
 
     render(){

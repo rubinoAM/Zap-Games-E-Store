@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './form.css';
 
 class Register extends Component{
+    constructor(){
+        super()
+        this.state = {
+            
+        }
+    }
+
+    registerSubmit = (e)=>{
+        e.preventDefault();
+        console.log(e.target);
+    }
+
     render(){
         return(
             <main>
                 <center>
                     <div className="container">
                         <div className="z-depth-1 grey lighten-4 row login">
-                        <form className="col s12" method="post">
-                            <h1>Register</h1>
+                        <form className="col s12" onSubmit={this.registerSubmit}>
                             <div className='row'>
-                            <div className='col s12'>
-                            </div>
+                                <div className='col s12'>
+                                    <h1 className="form-header">Register</h1>
+                                </div>
                             </div>
                             <div className='row'>
                             <div className='input-field col s12'>
@@ -28,7 +42,9 @@ class Register extends Component{
                             <br />
                             <center>
                             <div className='row'>
-                                <button type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo'>Register</button>
+                                <span className="col s3"></span>
+                                <button type='submit' name='btn_register' className='col s6 btn btn-large waves-effect indigo form-btn'>Register</button>
+                                <span className="col s3"></span>
                             </div>
                             </center>
                         </form>

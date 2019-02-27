@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './form.css';
 
 class Login extends Component{
+    constructor(){
+        super()
+        this.state = {
+
+        }
+    }
+
+    loginSubmit = (e)=>{
+        e.preventDefault();
+        console.dir(e.target);
+    }
+
     render(){
         return(
             <main>
                 <center>
                     <div className="container">
                         <div className="z-depth-1 grey lighten-4 row login">
-                        <form className="col s12" method="post">
-                            <h1>Log In</h1>
+                        <form className="col s12" onSubmit={this.loginSubmit}>
                             <div className='row'>
-                            <div className='col s12'>
-                            </div>
+                                <div className='col s12'>
+                                    <h1 className="form-header">Log In</h1>
+                                </div>
                             </div>
                             <div className='row'>
                             <div className='input-field col s12'>
@@ -32,7 +45,9 @@ class Login extends Component{
                             <br />
                             <center>
                             <div className='row'>
-                                <button type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo'>Login</button>
+                                <span className="col s3"></span>
+                                <button type='submit' name='btn_login' className='col s6 btn btn-large waves-effect indigo form-btn'>Login</button>
+                                <span className="col s3"></span>
                             </div>
                             </center>
                         </form>

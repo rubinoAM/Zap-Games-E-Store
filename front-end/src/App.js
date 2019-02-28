@@ -21,6 +21,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/games/:id" component={Game} />
+            <Route exact path="/cart" component={Cart} />
           </div>
           <Footer />
         </div>

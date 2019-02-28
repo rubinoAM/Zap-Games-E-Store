@@ -11,10 +11,12 @@
 .game-title{
     font-family:'ZCOOL QingKe HuangYou',cursive;
     font-size:4rem;
+    margin:0;
 }
 
-.game-title, .game-desc{
-    margin:0;
+.game-desc{
+    margin:20px auto;
+    width:70%;
 }
 
 .game-main-details{
@@ -40,6 +42,6 @@
 @media screen and (min-width:600px) and (max-width:1200px){
     .game-desc{
         width:80%;
-        margin:0 auto;
+        margin:10px auto;
     }
 }

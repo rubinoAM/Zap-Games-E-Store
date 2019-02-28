@@ -7,12 +7,23 @@ const db = require('../database');
 router.get('/getHome',(req,res,next)=>{
     const gameQuery = `SELECT * FROM games
         WHERE screenshot_url IS NOT NULL
-        ORDER BY popularity DESC
+        ORDER BY RANDOM()
         LIMIT 4;`;
 
         db.query(gameQuery).then((results)=>{
             res.json(results);
         }).catch((err)=>{if(err){throw err}});
 });
+
+router.get('/:gid',(req,res)=>{
+    const gid = req.params.gid;
+    const selectQuery = `SELECT * FROM games WHERE id = $1;`;
+
+    db.query(selectQuery,[gid]).then((gameData)=>{
+        res.json(gameData)
+    }).catch((err)=>{
+        if(err){throw err}
+    })
+})
 
 module.exports = router;

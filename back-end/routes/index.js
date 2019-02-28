@@ -25,6 +25,7 @@ router.get('/auth/github/callback', passport.authenticate('github'), (req,res,ne
   })
 });
 
+//Individual Game
 router.get('/game/:id',(req,res,next)=>{
   res.json(req.body);
 })

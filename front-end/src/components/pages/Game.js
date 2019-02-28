@@ -15,7 +15,7 @@ class Game extends Component{
             <div className="game-container">
                 <div className="row game-top-section">
                     <div className="col s12 m4">
-                        <img src="http://via.placeholder.com/250" alt="" className="game-pic" />
+                        <img alt="" src="http://via.placeholder.com/250" alt="" className="game-pic" />
                     </div>
                     <div className="col s12 m8">
                         <div className="row game-main-details">

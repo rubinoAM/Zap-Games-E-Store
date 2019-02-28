@@ -16,16 +16,16 @@ function Carousel(props){
     return(
         <Slider {...settings}>
             <div className="slick-image">
-                <img className="carousel-img" src="/images/home6.jpg" />
+                <img alt="" className="carousel-img" src="/images/home6.jpg" />
             </div>
             <div className="slick-image">
-                <img className="carousel-img" src="/images/home2.jpg" />
+                <img alt="" className="carousel-img" src="/images/home2.jpg" />
             </div>
             <div className="slick-image">
-                <img className="carousel-img" src="/images/home3.jpg" />
+                <img alt="" className="carousel-img" src="/images/home3.jpg" />
             </div>
             <div className="slick-image">
-                <img className="carousel-img" src="/images/home5.jpg" />
+                <img alt="" className="carousel-img" src="/images/home5.jpg" />
             </div>
         </Slider>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 function MainNav(props){
     return(
@@ -9,18 +10,18 @@ function MainNav(props){
                     <i className="material-icons">menu</i>
                 </a>
                     <ul className="left hide-on-small-only">
-                        <li><a>Home</a></li>
-                        <li><a>Location</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/location">Location</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
             </nav>
             <ul className="sidenav" id="mobile-demo">
-                <li><a>Home</a></li>
-                <li><a>Location</a></li>
-                <li><a>About</a></li>
-                <li><a>Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/location">Location</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
         </div>
     )

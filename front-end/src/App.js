@@ -20,7 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/game" component={Game} />
+            <Route exact path="/games/:id" component={Game} />
           </div>
           <Footer />
         </div>

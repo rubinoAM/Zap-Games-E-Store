@@ -4,13 +4,13 @@
     margin:50px 0;
 }
 
-.game-container h1{
-    font-family:'ZCOOL QingKe HuangYou',cursive;
-    font-size:5rem;
-}
-
 .game-pic{
     width:95%;
+}
+
+.game-title{
+    font-family:'ZCOOL QingKe HuangYou',cursive;
+    font-size:4rem;
 }
 
 .game-title, .game-desc{
@@ -22,8 +22,9 @@
     border-bottom:1px solid lightgray;
 }
 
-.tab-container{
-    margin-top:15px;
+.btm-header{
+    float:left;
+    font-size:1.5rem;
 }
 
 @media screen and (max-width:600px){

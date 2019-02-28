@@ -21,10 +21,12 @@ class Login extends Component{
         if(newProps.auth.msg === 'userNotFound'){
             this.setState({
                 showAlert: true,
+                msg: 'No user was found under that email. Either register yourself or try typing it again.',
             })
         } else if (newProps.auth.msg === 'badPassword'){
             this.setState({
                 showAlert: true,
+                msg: 'The password provided did not match the one on file. Please try again.',
             })
         } else if (newProps.auth.msg === 'loggedIn'){
             this.props.history.push('/');
@@ -39,33 +41,12 @@ class Login extends Component{
     }
 
     render(){
-        let swAlert;
-        if(this.state.msg === 'userNotFound'){
-            swAlert = <SweetAlert 
-                            show={this.state.showAlert}
-                            title="User Not Found"
-                            text="There is no user in our system with this name. Please try again."
-                            onConfirm={()=> this.setState({
-                                showAlert:false,
-                            })}
-                        />
-        } else if(this.state.msg === 'loggedIn'){
-            swAlert = <SweetAlert 
-                            show={this.state.showAlert}
-                            title="Wrong Password"
-                            text="The password you entered is incorrect. Please try again."
-                            onConfirm={()=> this.setState({
-                                showAlert:false,
-                            })}
-                        />
-        }
-
         return(
             <main>
                 <SweetAlert 
                     show={this.state.showAlert}
-                    title="Registration Error"
-                    text="This email is already registered with us. Please login or try a different email address."
+                    title="Login Error"
+                    text={this.state.msg}
                     onConfirm={()=> this.setState({
                         showAlert:false,
                     })}

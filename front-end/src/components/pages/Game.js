@@ -13,7 +13,7 @@ class Game extends Component{
     render(){
         return(
             <div className="game-container">
-                <div className="row">
+                <div className="row game-top-section">
                     <div className="col s12 m4">
                         <img src="http://via.placeholder.com/250" alt="" className="game-pic" />
                     </div>
@@ -38,6 +38,16 @@ class Game extends Component{
                                 <button className="btn amber lighten-2 black-text waves-effect waves-dark">ADD</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="row game-bottom-section">
+                    <div className="col s12 m4">
+                        <span className="btm-header">TAGS</span>
+                        <p></p>
+                    </div>
+                    <div className="col s12 m8">
+                        <span className="btm-header">DETAILS</span>
+                        <p></p>
                     </div>
                 </div>
             </div>

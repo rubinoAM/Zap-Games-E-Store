@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const config = require('../config');
 const passport = require('passport');
-const pgp = require('pg-promise')();
-const connection = config.pgp;
-const db = pgp(connection);
+const db = require('../database');
 const bcrypt = require('bcrypt-nodejs');
 const randToken = require('rand-token');
 
@@ -27,6 +24,10 @@ router.get('/auth/github/callback', passport.authenticate('github'), (req,res,ne
     }
   })
 });
+
+router.get('/game/:id',(req,res,next)=>{
+  res.json(req.body);
+})
 
 //Log In
 router.post('/login',(req,res,next)=>{

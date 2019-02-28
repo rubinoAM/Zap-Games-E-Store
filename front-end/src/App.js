@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Game from './components/pages/Game';
+import Cart from './components/pages/Cart';
 
 class App extends Component {
   render() {

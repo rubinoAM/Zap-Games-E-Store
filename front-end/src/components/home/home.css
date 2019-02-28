@@ -25,6 +25,11 @@
     margin-top:20px;
 }
 
+.card .card-image img{
+    height: 300px;
+    object-fit: cover;
+}
+
 @media screen and (max-width:992px){
     .carousel-img, .slick-slider{
         height:300px;

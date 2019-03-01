@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './game.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import updateCart from '../../actions/updateCart';
 import idgbKey from '../../misc/config';
 
 class Game extends Component{
@@ -38,6 +41,12 @@ class Game extends Component{
         }); */
     }
 
+    addToCart = (e)=>{
+        const token =  this.props.token;
+        const gameId = this.state.game.id;
+        this.props.updateCart(token,gameId);
+    }
+
     render(){
         let image = "";
         if(this.state.game.screenshot_url){
@@ -66,7 +75,7 @@ class Game extends Component{
                                 <input type="text" name="quantity"/>
                             </div>
                             <div className="col s2">
-                                <button className="btn amber lighten-2 black-text waves-effect waves-dark">ADD</button>
+                                <button onClick={this.addToCart} className="btn amber lighten-2 black-text waves-effect waves-dark">ADD</button>
                             </div>
                         </div>
                     </div>
@@ -86,4 +95,16 @@ class Game extends Component{
     }
 }
 
-export default Game;
+function mapStateToProps(state){
+    return({
+        auth: state.atuh
+    })
+}
+
+function mapDispatchToProps(dispatcher){
+    return bindActionCreators({
+        updateCart: updateCart,
+    },dispatcher)
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Game);

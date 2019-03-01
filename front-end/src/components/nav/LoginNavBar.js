@@ -18,9 +18,9 @@ class LoginNavBar extends Component{
         8) Put it in localstorage so we can use it next time
     */
 
-    githubAuth = (e)=>{
+    /* githubAuth = (e)=>{
         loginTab('http://localhost:7000/auth/github');
-    }
+    } */
 
     render(){
         let rightNavBar;
@@ -33,7 +33,7 @@ class LoginNavBar extends Component{
             rightNavBar = <span>
                 <Link className="main-link" to="/login">Log In</Link>
                 <Link className="main-link" to="/register">Register</Link>
-                <button type="button" onClick={this.githubAuth} className="btn btn-github">Login with github</button>    
+                {/*<button type="button" onClick={this.githubAuth} className="btn btn-github">Login with github</button>*/}    
             </span>
         }
 
@@ -43,8 +43,11 @@ class LoginNavBar extends Component{
                 <div className="right hide-on-small-only">
                     {rightNavBar}
                     <Link className="main-link" to="/cart">
-                        <i className="material-icons">shopping_cart</i>
+                        <i className="material-icons nav-icon">shopping_cart</i>
                     </Link>
+                </div>
+                <div className="right hide-on-med-and-up">
+                    <i className="material-icons nav-icon">menu</i>
                 </div>
             </div>
         )

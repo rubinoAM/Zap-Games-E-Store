@@ -27,7 +27,8 @@
 
 .card .card-image img{
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
+    background-color:rgba(49, 63, 159, 0.1);
 }
 
 @media screen and (max-width:992px){

@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 export default function(token){
-	var thePromise = axios({
+	var getCartPromise = axios({
 		method: "POST",
 		url: `${window.apiHost}/cart/getCart`,
 		data: {
-			token
+			token,
 		}
 	});
 
 	return{
 		type: "GET_CART",
-		payload: thePromise
+		payload: getCartPromise,
 	}
 }

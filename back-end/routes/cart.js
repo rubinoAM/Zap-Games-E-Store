@@ -17,15 +17,15 @@ router.post('/getCart',(req,res,next)=>{
                 INNER JOIN games ON games.id = cart.gid
                 WHERE uid = $1;`;
             db.query(getCartTotalsQuery,uid).then((results)=>{
-                const totalsQuery = `SELECT SUM(price) AS totalPrice, COUNT(price) AS totalItems FROM cart
+                const totalsQuery = `SELECT SUM(price) AS totalprice, COUNT(price) AS totalitems FROM cart
                     INNER JOIN games ON games.id = cart.gid
                     WHERE uid = $1;`;
                 
                 db.query(totalsQuery,[uid]).then((totalNumbers)=>{
                     const respData = {
                         contents: results,
-                        total: totalNumbers.totalPrice,
-                        item: totalNumbers.totalItems
+                        total: totalNumbers[0].totalprice,
+                        item: totalNumbers[0].totalitems,
                     }
 
                     res.json(respData);

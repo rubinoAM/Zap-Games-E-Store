@@ -13,7 +13,20 @@
 .cart-container h4{
     margin:0 auto;
     width:50%;
-    padding:25px 0;
+    padding:40px 0;
+}
+
+.cart-container a{
+    color:goldenrod;
+    transition:0.5s color ease-in;
+}
+
+.cart-container a:hover{
+    color:indigo;
+    transition:0.3s color ease-out;
+}
+
+.empty-mid-piece{
     border-top:1px solid lightgray;
     border-bottom:1px solid lightgray;
 }

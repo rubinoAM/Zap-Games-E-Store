@@ -49,11 +49,7 @@ class Cart extends Component{
 
 	componentDidMount(){
 		console.log(this.props.auth);
-		if(this.props.auth.token === undefined){
-			// if the user has no token... they should not be here. Goodbye.
-			// this.props.history.push('/login')
-		}else{
-			// the user does have a token, go get their cart!
+		if(this.props.auth.token !== undefined){
 			this.props.getCart(this.props.auth.token);
 		}
 	}
@@ -63,10 +59,10 @@ class Cart extends Component{
 		if(!this.props.cart.totalItems){
 			// if this return occurs, the render is DONE
 			return(
-				<div class="cart-container">
+				<div className="cart-container">
 					<i className="material-icons large">shopping_cart</i>
 					<h1>Shopping Cart</h1>
-					<h4>You currently don't have any items in your shopping cart.</h4>
+					<h4 className="empty-mid-piece">You currently don't have any items in your shopping cart.</h4>
 					<h4>Get shopping or <Link to="/login">login</Link> to your account!</h4>
 				</div>
 			)
@@ -78,7 +74,7 @@ class Cart extends Component{
 				)
 			})
 			return(
-				<div class="cart-container">
+				<div className="cart-container">
 					<i className="material-icons large">shopping_cart</i>
 					<h1>Shopping Cart</h1>
 					<h2>Your order total is: ${this.props.cart.totalPrice} - <button className="btn btn-primary" onClick={this.makePayment}>Checkout!</button></h2>

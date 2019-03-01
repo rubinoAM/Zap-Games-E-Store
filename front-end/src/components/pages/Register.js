@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './form.css';
 import { bindActionCreators } from 'redux';
 import authAction from '../../actions/authAction';

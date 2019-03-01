@@ -18,10 +18,6 @@ class LoginNavBar extends Component{
         8) Put it in localstorage so we can use it next time
     */
 
-    constructor(){
-        super()
-    }
-
     githubAuth = (e)=>{
         loginTab('http://localhost:7000/auth/github');
     }

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+//import React, { Component } from 'react';
+import React from 'react';
 import LoginNavBar from './LoginNavBar';
 import LogoSearchHeader from './LogoSearchHeader';
 import MainNav from './MainNav';

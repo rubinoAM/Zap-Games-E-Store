@@ -37,7 +37,7 @@ router.post('/login',(req,res,next)=>{
   const password = req.body.password
 
   db.query(checkUsernameQuery,[username]).then(results=>{
-    console.log(results);
+    //console.log(results);
     if(results.length === 0){
       res.json({
         msg:'userNotFound',

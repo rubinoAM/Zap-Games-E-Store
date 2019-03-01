@@ -3,7 +3,6 @@ var router = express.Router();
 const db = require('../database');
 
 //This middleware is only applied at /games
-
 router.get('/getHome',(req,res,next)=>{
     const gameQuery = `SELECT * FROM games
         WHERE screenshot_url IS NOT NULL

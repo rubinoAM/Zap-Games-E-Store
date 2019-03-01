@@ -90,4 +90,13 @@ router.post('/register',(req,res,next)=>{
   })
 })
 
+//Logout
+router.get('/logout',(req,res,next)=>{
+  res.json({
+    msg:'',
+    username:'',
+    token:'',
+  })
+})
+
 module.exports = router;

@@ -5,6 +5,7 @@ import GetCart from '../../actions/getCart';
 import { Link } from 'react-router-dom';
 import CartRow from '../utilities/CartRow';
 import axios from 'axios';
+import './cart.css';
 
 class Cart extends Component{
 	constructor(){
@@ -62,8 +63,11 @@ class Cart extends Component{
 		if(!this.props.cart.totalItems){
 			// if this return occurs, the render is DONE
 			return(
-				<div>
-					<h3>Your cart is empty! Get shopping or <Link to="/login">login</Link></h3>
+				<div class="cart-container">
+					<i className="material-icons large">shopping_cart</i>
+					<h1>Shopping Cart</h1>
+					<h4>You currently don't have any items in your shopping cart.</h4>
+					<h4>Get shopping or <Link to="/login">login</Link> to your account!</h4>
 				</div>
 			)
 		}else{
@@ -74,7 +78,9 @@ class Cart extends Component{
 				)
 			})
 			return(
-				<div>
+				<div class="cart-container">
+					<i className="material-icons large">shopping_cart</i>
+					<h1>Shopping Cart</h1>
 					<h2>Your order total is: ${this.props.cart.totalPrice} - <button className="btn btn-primary" onClick={this.makePayment}>Checkout!</button></h2>
 					<table className="table table-striped">
 						<thead>

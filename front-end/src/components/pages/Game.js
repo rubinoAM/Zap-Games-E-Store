@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './game.css';
+import idgbKey from '../../misc/config';
 
 class Game extends Component{
     constructor(){
@@ -21,6 +22,21 @@ class Game extends Component{
             })
             console.log(gameData);
         });
+
+        /* const getTags = axios({
+            url: "https://api-v3.igdb.com/games",
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'user-key': idgbKey,
+            },
+            data: "fields tags;"
+        }).then(response => {
+            console.log(response.data);
+        })
+        .catch(err => {
+            console.error(err);
+        }); */
     }
 
     render(){

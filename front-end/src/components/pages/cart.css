@@ -1,0 +1,29 @@
+.cart-container{
+    background:#fff;
+    margin:50px 0;
+    padding:30px;
+}
+
+.cart-container h1{
+    font-family:'ZCOOL QingKe HuangYou',cursive;
+    font-size:6rem;
+    padding-bottom:25px;
+}
+
+.cart-container h4{
+    margin:0 auto;
+    width:50%;
+    padding:25px 0;
+    border-top:1px solid lightgray;
+    border-bottom:1px solid lightgray;
+}
+
+@media screen and (max-width:600px){
+    .cart-container h1{
+        font-size:4rem;
+    }
+
+    .cart-container h4{
+        width:auto;
+    }
+}

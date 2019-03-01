@@ -5,7 +5,7 @@ export default function(token,itemId){
 		method: "POST",
 		url: `${window.apiHost}/cart/updateCart`,
 		data: {
-            token,
+            token: token,
             itemId: itemId,
 		}
 	});

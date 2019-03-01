@@ -42,7 +42,7 @@ class Game extends Component{
     }
 
     addToCart = (e)=>{
-        const token =  this.props.token;
+        const token =  this.props.auth.token;
         const gameId = this.state.game.id;
         this.props.updateCart(token,gameId);
     }
@@ -97,7 +97,7 @@ class Game extends Component{
 
 function mapStateToProps(state){
     return({
-        auth: state.atuh
+        auth: state.auth
     })
 }
 

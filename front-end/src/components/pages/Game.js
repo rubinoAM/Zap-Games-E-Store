@@ -41,6 +41,12 @@ class Game extends Component{
         }); */
     }
 
+    componentWillReceiveProps(newProps){
+        if(newProps.cart.length != this.props.cart.length){
+            this.props.history.push('/?added=item');
+        }
+    }
+
     addToCart = (e)=>{
         const token =  this.props.auth.token;
         const gameId = this.state.game.id;
@@ -97,7 +103,8 @@ class Game extends Component{
 
 function mapStateToProps(state){
     return({
-        auth: state.auth
+        auth: state.auth,
+        cart: state.cart,
     })
 }
 

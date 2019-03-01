@@ -29,7 +29,7 @@ class LoginNavBar extends Component{
                 <span>Welcome, {this.props.auth.username}!</span>
                 <Link className="main-link" to="/">Log Out</Link>
             </span>
-        }else{
+        } else {
             rightNavBar = <span>
                 <Link className="main-link" to="/login">Log In</Link>
                 <Link className="main-link" to="/register">Register</Link>
@@ -57,6 +57,7 @@ class LoginNavBar extends Component{
 function mapStateToProps(state){
     return{
         auth:state.auth,
+        cart:state.cart,
     }
 }
 

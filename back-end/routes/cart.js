@@ -31,7 +31,7 @@ router.post('/updateCart',(req,res,next)=>{
             })
         } else {
             const uid = results[0].id;
-            const addToCartQuery = `INSERT INTO cart (uid,gid,date)
+            const addToCartQuery = `INSERT INTO cart (uid,gid,dateadded)
                 VALUES ($1,$2,NOW());`;
 
             db.query(addToCartQuery,[uid,itemId]).then(()=>{
